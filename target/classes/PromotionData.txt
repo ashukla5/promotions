@@ -1,6 +1,0 @@
-PromotionId SKU OfferQuantity QualifyingQuantity
-P001 Orange 5 2 *
-PromotionId SKU PercentOff
-P002 Orange 50 *
-PromotionId SKU Quantity SKU Quantity OrderTotal
-P003 Orange 1 Apple 1 200 *

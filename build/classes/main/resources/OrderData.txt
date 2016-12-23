@@ -1,3 +1,0 @@
-SKU Quantity Price
-Orange 9 120
-Apple 3 180
