@@ -1,76 +1,173 @@
 package org.abhi.promotion.beans;
 
+/**
+ * Bean class for Order lines in the cart.
+ * 
+ * @author ashu10
+ *
+ */
+ 
 public class OrderItemBean {
 
-    private String orderItemId;
-    private ItemBean items;
-    private int itemQunatity;
-    private int itemOfferQuantity;
-    private double orderItemsTotal;
-    private double itemTotalPostDiscount;
-    private String skuId;
+	/**
+	 * orderItemId
+	 */
+	private String orderItemId;
 
-    public int getItemOfferQuantity() {
-        return itemOfferQuantity;
-    }
+	/**
+	 * items associated with order line
+	 */
+	private ItemBean items;
 
-    public void setItemOfferQuantity(
-            int itemOfferQuantity) {
-        this.itemOfferQuantity = itemOfferQuantity;
-    }
+	/**
+	 * itemQunatity
+	 */
+	private int itemQunatity;
 
-    public String getSkuId() {
-        return skuId;
-    }
+	/**
+	 * itemOfferQuantity
+	 */
+	private int itemOfferQuantity;
 
-    public void setSkuId(
-            String skuId) {
-        this.skuId = skuId;
-    }
+	/**
+	 * order line total
+	 */
+	private double orderItemsTotal;
 
-    public String getOrderItemId() {
-        return orderItemId;
-    }
+	/**
+	 * itemTotalPostDiscount
+	 */
+	private double offerItemsTotal;
 
-    public void setOrderItemId(
-            String orderItemId) {
-        this.orderItemId = orderItemId;
-    }
+	/**
+	 * remainingItems
+	 * 
+	 */
+	private int remainingItems;
 
-    public double getOrderItemsTotal() {
-        return orderItemsTotal;
-    }
+	/**
+	 * skuId
+	 */
+	private String skuId;
 
-    public void setOrderItemsTotal(
-            double orderItemsTotal) {
-        this.orderItemsTotal = orderItemsTotal;
-    }
+	/**
+	 * @return the offerItemTotal
+	 */
+	public double getOfferItemsTotal() {
+		return offerItemsTotal;
+	}
 
-    public double getItemTotalPostDiscount() {
-        return itemTotalPostDiscount;
-    }
+	/**
+	 * @param offerItemTotal
+	 *            the offerItemTotal to set
+	 */
+	public void setOfferItemsTotal(final double offerItemsTotal) {
+		this.offerItemsTotal = offerItemsTotal;
+	}
 
-    public void setItemTotalPostDiscount(
-            double itemsDiscountTotal) {
-        this.itemTotalPostDiscount = itemsDiscountTotal;
-    }
+	/**
+	 * @return the orderItemId
+	 */
+	public String getOrderItemId() {
+		return orderItemId;
+	}
 
-    public ItemBean getItems() {
-        return items;
-    }
+	/**
+	 * @param orderItemId
+	 *            the orderItemId to set
+	 */
+	public void setOrderItemId(final String orderItemId) {
+		this.orderItemId = orderItemId;
+	}
 
-    public void setItems(
-            ItemBean items) {
-        this.items = items;
-    }
+	/**
+	 * @return the items
+	 */
+	public ItemBean getItems() {
+		return items;
+	}
 
-    public int getItemQunatity() {
-        return itemQunatity;
-    }
+	/**
+	 * @param items
+	 *            the items to set
+	 */
+	public void setItems(final ItemBean items) {
+		this.items = items;
+	}
 
-    public void setItemQunatity(
-            int itemQunatity) {
-        this.itemQunatity = itemQunatity;
-    }
+	/**
+	 * @return the itemQunatity
+	 */
+	public int getItemQunatity() {
+		return itemQunatity;
+	}
+
+	/**
+	 * @param itemQunatity
+	 *            the itemQunatity to set
+	 */
+	public void setItemQunatity(final int itemQunatity) {
+		this.itemQunatity = itemQunatity;
+	}
+
+	/**
+	 * @return the itemOfferQuantity
+	 */
+	public int getItemOfferQuantity() {
+		return itemOfferQuantity;
+	}
+
+	/**
+	 * @param itemOfferQuantity
+	 *            the itemOfferQuantity to set
+	 */
+	public void setItemOfferQuantity(final int itemOfferQuantity) {
+		this.itemOfferQuantity = itemOfferQuantity;
+	}
+
+	/**
+	 * @return the orderItemsTotal
+	 */
+	public double getOrderItemsTotal() {
+		return orderItemsTotal;
+	}
+
+	/**
+	 * @param orderItemsTotal
+	 *            the orderItemsTotal to set
+	 */
+	public void setOrderItemsTotal(final double orderItemsTotal) {
+		this.orderItemsTotal = orderItemsTotal;
+	}
+
+	/**
+	 * @return the skuId
+	 */
+	public String getSkuId() {
+		return skuId;
+	}
+
+	/**
+	 * @param skuId
+	 *            the skuId to set
+	 */
+	public void setSkuId(final String skuId) {
+		this.skuId = skuId;
+	}
+
+	/**
+	 * @return the remainingItems
+	 */
+	public int getRemainingItems() {
+		return remainingItems;
+	}
+
+	/**
+	 * @param remainingItems
+	 *            the remainingItems to set
+	 */
+	public void setRemainingItems(final int remainingItems) {
+		this.remainingItems = remainingItems;
+	}
 
 }

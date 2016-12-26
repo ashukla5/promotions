@@ -2,57 +2,100 @@ package org.abhi.promotion.beans;
 
 import java.util.List;
 
+/**
+ * Bean class to hold the Order data once items are added to the cart.
+ * 
+ * @author ashu10
+ */
 public class OrderDataBean {
 
-    private String orderId;
-    private double orderTotal;
-    private double orderTotalWithPromotion;
-    List<OrderItemBean> orderItems;
-    private PromotionsDataBean promotions;
+	/**
+	 * OrderId
+	 */
+	private String orderId;
+	/**
+	 * Final cart total before promotion
+	 */
+	private double orderTotal;
+	/**
+	 * Final cart/order total after applying promotion
+	 */
+	private double orderFinalTotal;
+	/**
+	 * Order line items added to the order.
+	 */
+	private List<OrderItemBean> orderItems;
 
-    public PromotionsDataBean getPromotions() {
-        return promotions;
-    }
+	/**
+	 * getOrderId()
+	 * 
+	 * @return orderId
+	 */
+	public String getOrderId() {
+		return orderId;
+	}
 
-    public void setPromotions(
-            PromotionsDataBean promotions) {
-        this.promotions = promotions;
-    }
+	/**
+	 * setOrderId()
+	 * 
+	 * @param orderId
+	 */
+	public void setOrderId(final String orderId) {
+		this.orderId = orderId;
+	}
 
-    public String getOrderId() {
-        return orderId;
-    }
+	/**
+	 * getOrderTotal()
+	 * 
+	 * @return orderTotal
+	 */
+	public double getOrderTotal() {
+		return orderTotal;
+	}
 
-    public void setOrderId(
-            String orderId) {
-        this.orderId = orderId;
-    }
+	/**
+	 * setOrderTotal()
+	 * 
+	 * @param orderTotal
+	 */
+	public void setOrderTotal(final double orderTotal) {
+		this.orderTotal = orderTotal;
+	}
 
-    public double getOrderTotal() {
-        return orderTotal;
-    }
+	/**
+	 * getOrderTotalWithPromotion()
+	 * 
+	 * @return orderTotalWithPromotion
+	 */
+	public double getOrderFinalTotal() {
+		return orderFinalTotal;
+	}
 
-    public void setOrderTotal(
-            double orderTotal) {
-        this.orderTotal = orderTotal;
-    }
+	/**
+	 * setOrderTotalWithPromotion()
+	 * 
+	 * @param discountTotal
+	 */
+	public void setOrderFinalTotal(final double discountTotal) {
+		this.orderFinalTotal = discountTotal;
+	}
 
-    public double getOrderTotalWithPromotion() {
-        return orderTotalWithPromotion;
-    }
+	/**
+	 * getOrderItems()
+	 * 
+	 * @return orderItems
+	 */
+	public List<OrderItemBean> getOrderItems() {
+		return orderItems;
+	}
 
-    public void setOrderTotalWithPromotion(
-            double discountTotal) {
-        this.orderTotalWithPromotion = discountTotal;
-    }
-
-    public List<OrderItemBean> getOrderItems() {
-        return orderItems;
-    }
-
-    public void setOrderItems(
-            List<OrderItemBean> orderItems) {
-        this.orderItems = orderItems;
-    }
+	/**
+	 * setOrderItems()
+	 * 
+	 * @param orderItems
+	 */
+	public void setOrderItems(final List<OrderItemBean> orderItems) {
+		this.orderItems = orderItems;
+	}
 
 }

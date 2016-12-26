@@ -1,66 +1,131 @@
 package org.abhi.promotion.beans;
 
+/**
+ * Bean class for BuyQtyXInPriceOfQtyY
+ * 
+ * @author ashu10
+ */
 public class BuyQtyXInPriceOfQtyYPromoBean {
+	
+	/**
+	 * promotionId
+	 */
 
-    private String promotionId;
-    private String skuId;
-    private int offerQuantity;
-    private int qualifiyingQuantity;
-    private double derivedPercentOff;
-    private int promotionPriority;
+	private String promotionId;
 
-    public int getPromotionPriority() {
-        return promotionPriority;
-    }
+	/**
+	 * Item Id on which promo will be applied.
+	 */
+	private String skuId;
 
-    public void setPromotionPriority(
-            int promotionPriority) {
-        this.promotionPriority = promotionPriority;
-    }
+	/**
+	 * purchase quantity
+	 */
+	private int offerQuantity;
 
-    public double getDerivedPercentOff() {
-        return derivedPercentOff;
-    }
+	/**
+	 * quantity whose price will be given as per promo.
+	 */
+	private int currentQuantity;
 
-    public void setDerivedPercentOff(
-            double derivedPercentOff) {
-        this.derivedPercentOff = derivedPercentOff;
-    }
+	/**
+	 * derived percent off after promotion on single item price.
+	 */
+	private double derivedPercentOff;
 
-    public String getPromotionId() {
-        return promotionId;
-    }
+	/**
+	 * promotion priority
+	 */
+	private int promotionPriority;
 
-    public void setPromotionId(
-            String promotionId) {
-        this.promotionId = promotionId;
-    }
+	/**
+	 * @return the promotionId
+	 */
+	public String getPromotionId() {
+		return promotionId;
+	}
 
-    public String getSkuId() {
-        return skuId;
-    }
+	/**
+	 * @param promotionId
+	 *            the promotionId to set
+	 */
+	public void setPromotionId(final String promotionId) {
+		this.promotionId = promotionId;
+	}
 
-    public void setSkuId(
-            String skuId) {
-        this.skuId = skuId;
-    }
+	/**
+	 * @return the skuId
+	 */
+	public String getSkuId() {
+		return skuId;
+	}
 
-    public int getOfferQuantity() {
-        return offerQuantity;
-    }
+	/**
+	 * @param skuId
+	 *            the skuId to set
+	 */
+	public void setSkuId(final String skuId) {
+		this.skuId = skuId;
+	}
 
-    public void setOfferQuantity(
-            int offerQuantity) {
-        this.offerQuantity = offerQuantity;
-    }
+	/**
+	 * @return the offerQuantity
+	 */
+	public int getOfferQuantity() {
+		return offerQuantity;
+	}
 
-    public int getQualifiyingQuantity() {
-        return qualifiyingQuantity;
-    }
+	/**
+	 * @param offerQuantity
+	 *            the offerQuantity to set
+	 */
+	public void setOfferQuantity(final int offerQuantity) {
+		this.offerQuantity = offerQuantity;
+	}
 
-    public void setQualifiyingQuantity(
-            int qualifiyingQuantity) {
-        this.qualifiyingQuantity = qualifiyingQuantity;
-    }
+	/**
+	 * @return the currentQuantity
+	 */
+	public int getCurrentQuantity() {
+		return currentQuantity;
+	}
+
+	/**
+	 * @param currentQuantity
+	 *            the currentQuantity to set
+	 */
+	public void setCurrentQuantity(final int currentQuantity) {
+		this.currentQuantity = currentQuantity;
+	}
+
+	/**
+	 * @return the derivedPercentOff
+	 */
+	public double getDerivedPercentOff() {
+		return derivedPercentOff;
+	}
+
+	/**
+	 * @param derivedPercentOff
+	 *            the derivedPercentOff to set
+	 */
+	public void setDerivedPercentOff(final double derivedPercentOff) {
+		this.derivedPercentOff = derivedPercentOff;
+	}
+
+	/**
+	 * @return the promotionPriority
+	 */
+	public int getPromotionPriority() {
+		return promotionPriority;
+	}
+
+	/**
+	 * @param promotionPriority
+	 *            the promotionPriority to set
+	 */
+	public void setPromotionPriority(final int promotionPriority) {
+		this.promotionPriority = promotionPriority;
+	}
 
 }

@@ -1,35 +1,78 @@
 package org.abhi.promotion.beans;
 
+/**
+ * Bean class for Promotions.
+ * 
+ * @author ashu10
+ *
+ */
 public class PromotionsDataBean {
 
+	/**
+	 * BuyQtyXInPriceOfQtyY Promotion field
+	 */
 	private BuyQtyXInPriceOfQtyYPromoBean buyXInYPromo;
-	private PercentOffOnCategotryPromoBean percentOffPromo;
-	private SKUCombinationOrderPromoBean skuCombinationPromo;
 
+	/**
+	 * PercentOffOnCategotry Promotion field
+	 */
+	private PercentOffOnCategotryPromoBean percentOffPromo;
+
+	/**
+	 * SKUCombinationOrder Promotion field
+	 */
+	private SKUCombinationOrderPromoBean skuComboPromo;
+
+	/**
+	 * BuyQtyXInPriceOfQtyY Promotion getter
+	 * 
+	 * @return buyXInYPromo
+	 */
 	public BuyQtyXInPriceOfQtyYPromoBean getBuyXInYPromo() {
 		return buyXInYPromo;
 	}
 
-	public void setBuyXInYPromo(BuyQtyXInPriceOfQtyYPromoBean buyXInYPromo) {
+	/**
+	 * setBuyXInYPromo
+	 * 
+	 * @param buyXInYPromo
+	 */
+	public void setBuyXInYPromo(final BuyQtyXInPriceOfQtyYPromoBean buyXInYPromo) {
 		this.buyXInYPromo = buyXInYPromo;
 	}
 
+	/**
+	 * getPercentOffPromo
+	 * 
+	 * @return percentOffPromo
+	 */
 	public PercentOffOnCategotryPromoBean getPercentOffPromo() {
 		return percentOffPromo;
 	}
 
+	/**
+	 * setPercentOffPromo
+	 * 
+	 * @param percentOffPromo
+	 */
 	public void setPercentOffPromo(
-			PercentOffOnCategotryPromoBean percentOffPromo) {
+			final PercentOffOnCategotryPromoBean percentOffPromo) {
 		this.percentOffPromo = percentOffPromo;
 	}
 
-	public SKUCombinationOrderPromoBean getSkuCombinationPromo() {
-		return skuCombinationPromo;
+	/**
+	 * @return the skuComboPromo
+	 */
+	public SKUCombinationOrderPromoBean getSkuComboPromo() {
+		return skuComboPromo;
 	}
 
-	public void setSkuCombinationPromo(
-			SKUCombinationOrderPromoBean skuCombinationPromo) {
-		this.skuCombinationPromo = skuCombinationPromo;
+	/**
+	 * @param skuComboPromo
+	 *            the skuComboPromo to set
+	 */
+	public void setSkuComboPromo(final SKUCombinationOrderPromoBean skuComboPromo) {
+		this.skuComboPromo = skuComboPromo;
 	}
 
 }

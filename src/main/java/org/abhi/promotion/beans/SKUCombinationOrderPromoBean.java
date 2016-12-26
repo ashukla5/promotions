@@ -2,47 +2,92 @@ package org.abhi.promotion.beans;
 
 import java.util.List;
 
+/**
+ * Bean class for SKUCombinationOrder Promotion
+ * 
+ * @author ashu10
+ *
+ */
 public class SKUCombinationOrderPromoBean {
 
-    private String promotionId;
-    private List<OrderItemBean> orderitems;
-    private double qualifyingOrderAmount;
-    private int promotionPriority;
+	/**
+	 * promotionId
+	 */
+	private String promotionId;
 
-    public int getPromotionPriority() {
-        return promotionPriority;
-    }
+	/**
+	 * orderitems participating in this promotion
+	 */
+	private List<OrderItemBean> orderitems;
 
-    public void setPromotionPriority(
-            int promotionPriority) {
-        this.promotionPriority = promotionPriority;
-    }
+	/**
+	 * qualifying order amount in this promotion
+	 */
+	private double offerOrderAmount;
 
-    public String getPromotionId() {
-        return promotionId;
-    }
+	/**
+	 * priority of the promotion
+	 */
+	private int promotionPriority;
 
-    public void setPromotionId(
-            String promotionId) {
-        this.promotionId = promotionId;
-    }
+	/**
+	 * @return the promotionId
+	 */
+	public String getPromotionId() {
+		return promotionId;
+	}
 
-    public List<OrderItemBean> getOrderitems() {
-        return orderitems;
-    }
+	/**
+	 * @param promotionId
+	 *            the promotionId to set
+	 */
+	public void setPromotionId(final String promotionId) {
+		this.promotionId = promotionId;
+	}
 
-    public void setOrderitems(
-            List<OrderItemBean> orderitems) {
-        this.orderitems = orderitems;
-    }
+	/**
+	 * @return the orderitems
+	 */
+	public List<OrderItemBean> getOrderitems() {
+		return orderitems;
+	}
 
-    public double getQualifyingOrderAmount() {
-        return qualifyingOrderAmount;
-    }
+	/**
+	 * @param orderitems
+	 *            the orderitems to set
+	 */
+	public void setOrderitems(final List<OrderItemBean> orderitems) {
+		this.orderitems = orderitems;
+	}
 
-    public void setQualifyingOrderAmount(
-            double qualifyingOrderAmount) {
-        this.qualifyingOrderAmount = qualifyingOrderAmount;
-    }
+	/**
+	 * @return the offerOrderAmount
+	 */
+	public double getOfferOrderAmount() {
+		return offerOrderAmount;
+	}
+
+	/**
+	 * @param offerOrderAmount
+	 *            the offerOrderAmount to set
+	 */
+	public void setOfferOrderAmount(final double offerOrderAmount) {
+		this.offerOrderAmount = offerOrderAmount;
+	}
+
+	/**
+	 * @return the promotionPriority
+	 */
+	public int getPromotionPriority() {
+		return promotionPriority;
+	}
+
+	/**
+	 * @param promotionPriority
+	 *            the promotionPriority to set
+	 */
+	public void setPromotionPriority(final int promotionPriority) {
+		this.promotionPriority = promotionPriority;
+	}
 
 }

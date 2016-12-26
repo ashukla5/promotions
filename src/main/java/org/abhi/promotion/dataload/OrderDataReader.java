@@ -8,27 +8,41 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.abhi.promotion.beans.BuyQtyXInPriceOfQtyYPromoBean;
 import org.abhi.promotion.beans.ItemBean;
 import org.abhi.promotion.beans.OrderDataBean;
 import org.abhi.promotion.beans.OrderItemBean;
-import org.abhi.promotion.beans.PercentOffOnCategotryPromoBean;
-import org.abhi.promotion.beans.PromotionsDataBean;
-import org.abhi.promotion.beans.SKUCombinationOrderPromoBean;
 import org.abhi.promotion.constants.OrderPromotionConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+/**
+ * Class to read the order data file.
+ * 
+ * @author ashu10
+ *
+ */
 public class OrderDataReader {
 
-	// method will return the final order total (optimal) after applying the
-	public OrderDataBean readOrderData(final String orderDataFilePath) {
-		OrderDataBean orderDataBean = new OrderDataBean();
+	private Logger logger = LoggerFactory.getLogger(OrderDataReader.class);
+
+	/**
+	 * Method to read the order data from file and prepare orderData bean.
+	 * 
+	 * @param orderDataBean
+	 * @param orderDataFilePath
+	 * @return orderDataBean
+	 */
+	public OrderDataBean readOrderData(final OrderDataBean orderDataBean,
+			final String orderDataFilePath) {
+
+		logger.info("Method start: readOrderData");
 
 		FileInputStream fileInputStream = null;
 		DataInputStream dataInputstream = null;
 		BufferedReader bufferedReader = null;
 		try {
 			fileInputStream = new FileInputStream(orderDataFilePath);
+			logger.debug(" order data file path " + orderDataFilePath);
 			dataInputstream = new DataInputStream(fileInputStream);
 			bufferedReader = new BufferedReader(new InputStreamReader(
 					dataInputstream));
@@ -36,7 +50,7 @@ public class OrderDataReader {
 			String lineInFile;
 			int fileRows = 0;
 			OrderItemBean orderItemBean;
-			List<OrderItemBean> orderItems = new ArrayList<OrderItemBean>();
+			final List<OrderItemBean> orderItems = new ArrayList<OrderItemBean>();
 
 			while (null != (lineInFile = bufferedReader.readLine())) {
 				fileRows++; // move to 2nd line as first line is header.
@@ -45,50 +59,60 @@ public class OrderDataReader {
 							.split(OrderPromotionConstants.SPACE);
 					orderItemBean = new OrderItemBean();
 					ItemBean items = new ItemBean();
-					items.setSkuId(tokens[0]);
 
-					String itemCurrentPrice = tokens[2];
+					final String skuId = tokens[0];
+					items.setSkuId(skuId);
+
+					final String itemCurrentPrice = tokens[2];
 					if (null != itemCurrentPrice) {
 						items.setItemCurrentPrice(Integer
 								.parseInt(itemCurrentPrice));
 					}
 
 					orderItemBean.setItems(items);
-					// Null check for item quantity.
-					String itemQuantity = tokens[1];
+					final String itemQuantity = tokens[1];
+
 					if (null != itemQuantity) {
 						orderItemBean.setItemQunatity(Integer
 								.parseInt(itemQuantity));
 						orderItemBean.setOrderItemsTotal(Integer
 								.parseInt(itemQuantity)
 								* items.getItemCurrentPrice());
-						orderItemBean.setSkuId(tokens[0]);
+						orderItemBean.setSkuId(skuId);
 					}
 					orderItems.add(orderItemBean);
 				}
 			}
+
 			orderDataBean.setOrderItems(orderItems);
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException fileNotFound) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
+			logger.error(fileNotFound.getMessage());
+		} catch (IOException ioExcep) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(ioExcep.getMessage());
 		} finally {
 			try {
-				if (null != fileInputStream) {
-					fileInputStream.close();
-				}
-				if (null != dataInputstream) {
-					dataInputstream.close();
-				}
-				if (null != bufferedReader) {
-					bufferedReader.close();
-				}
-			} catch (IOException expception) {
-				expception.printStackTrace();
+				closeStreams(fileInputStream, dataInputstream, bufferedReader);
+			} catch (IOException ioExcep) {
+				logger.error(ioExcep.getMessage());
 			}
 		}
+		logger.info("Method end: readOrderData");
 		return orderDataBean;
+	}
+
+	private void closeStreams(final FileInputStream fileInputStream,
+			final DataInputStream dataInputstream,
+			final BufferedReader bufferedReader) throws IOException {
+		if (null != fileInputStream) {
+			fileInputStream.close();
+		}
+		if (null != dataInputstream) {
+			dataInputstream.close();
+		}
+		if (null != bufferedReader) {
+			bufferedReader.close();
+		}
 	}
 }

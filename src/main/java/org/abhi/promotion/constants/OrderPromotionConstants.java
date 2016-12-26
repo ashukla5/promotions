@@ -1,16 +1,23 @@
 package org.abhi.promotion.constants;
 
+/**
+ * Constants class for order and promotion calculations.
+ */
 public class OrderPromotionConstants {
 
     /** Space (" ") for splitting purpose **/
     public static final String SPACE = " ";
 
-    public static final String PROMOTION_DELIMITER = "*";
+    /** Promotion delimiter in the promotiondata file **/
+    public static final String DELIMITER = "*";
 
-    public static final int PROMOTION_PRIORITY_ONE = 1;
+    /** Promotion priority as 1 **/
+    public static final int PRIORITY_ONE = 1;
 
-    public static final int PROMOTION_PRIORITY_TWO = 2;
+    /** Promotion priority as 2 **/
+    public static final int PRIORITY_TWO = 2;
 
-    public static final int PROMOTION_PRIORITY_THREE = 3;
+    /** Promotion priority as 3 **/
+    public static final int PRIORITY_THREE = 3;
 
 }

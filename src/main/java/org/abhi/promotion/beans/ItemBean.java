@@ -1,42 +1,94 @@
 package org.abhi.promotion.beans;
 
+/**
+ * Bean class for itesm which will be added to the cart.
+ * @author ashu10
+ */
 public class ItemBean {
 
-	private String skuId;
-	private double itemCurrentPrice;
-	private double itemOfferPrice;
-	private double percentOff;
+    /**
+     * skuId for item added in the cart.
+     */
+    private String skuId;
+    /**
+     * price of item which is being added to the cart.
+     */
+    private double itemCurrentPrice;
+    /**
+     * item's price after applying promotion.
+     */
+    private double itemOfferPrice;
+    /**
+     * how many % off on itemprice after promotion.
+     */
+    private double percentOff;
 
-	public double getPercentOff() {
-		return percentOff;
-	}
+    /**
+     * getPercentOff()
+     * @return percentOff
+     */
+    public double getPercentOff() {
+        return percentOff;
+    }
 
-	public void setPercentOff(double percentOff) {
-		this.percentOff = percentOff;
-	}
+    /**
+     * setPercentOff()
+     * @param percentOff
+     */
+    public void setPercentOff(
+            final double percentOff) {
+        this.percentOff = percentOff;
+    }
 
-	public String getSkuId() {
-		return skuId;
-	}
+    /**
+     * getSkuId()
+     * @return skuId
+     */
+    public String getSkuId() {
+        return skuId;
+    }
 
-	public void setSkuId(String skuId) {
-		this.skuId = skuId;
-	}
+    /**
+     * setSkuId()
+     * @param skuId
+     */
+    public void setSkuId(
+            final String skuId) {
+        this.skuId = skuId;
+    }
 
-	public double getItemCurrentPrice() {
-		return itemCurrentPrice;
-	}
+    /**
+     * getItemCurrentPrice()
+     * @return itemCurrentPrice
+     */
+    public double getItemCurrentPrice() {
+        return itemCurrentPrice;
+    }
 
-	public void setItemCurrentPrice(double itemCurrentPrice) {
-		this.itemCurrentPrice = itemCurrentPrice;
-	}
+    /**
+     * setItemCurrentPrice()
+     * @param itemCurrentPrice
+     */
+    public void setItemCurrentPrice(
+            final double itemCurrentPrice) {
+        this.itemCurrentPrice = itemCurrentPrice;
+    }
 
-	public double getItemOfferPrice() {
-		return itemOfferPrice;
-	}
+    /**
+     * getItemOfferPrice
+     * @return itemOfferPrice
+     */
+    public double getItemOfferPrice() {
+        return itemOfferPrice;
+    }
 
-	public void setItemOfferPrice(double itemOfferPrice) {
-		this.itemOfferPrice = itemOfferPrice;
-	}
+    /**
+     * setItemOfferPrice()
+     * @param itemOfferPrice
+     */
+    public void setItemOfferPrice(
+            final double itemOfferPrice) {
+        this.itemOfferPrice = itemOfferPrice;
+    }
 
 }
